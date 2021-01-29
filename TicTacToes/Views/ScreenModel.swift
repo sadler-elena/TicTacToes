@@ -12,7 +12,7 @@ struct ScreenModel: View {
     var body: some View {
         ZStack {
             Color.white
-            edgesIgnoringSafeArea(.all)
+                .edgesIgnoringSafeArea(.all)
             
             VStack {
                 Text("Tic-Tac-Toes")
@@ -23,11 +23,14 @@ struct ScreenModel: View {
                 Text("\(viewModel.state.currentSquare.symbol)'s Turn")
                     .font(.headline)
                     .fontWeight(.semibold)
-                Divider()
+                    .foregroundColor(Color.black)
+                
                 GridView()
                     .environmentObject(viewModel)
+                    .padding(.top, 50)
                 
             }
+            
         }
     }
 }

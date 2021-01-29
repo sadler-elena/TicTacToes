@@ -11,16 +11,18 @@ import Combine
 final class BoardViewModel: ObservableObject {
     
     @Published var board: GameBoard
-    var state: GameState = .playerOneTurn
+    @Published var state: GameState
     
     init(board: GameBoard) {
         self.board = board
+        self.state = .playerOneTurn
     }
     func claimTile(newSquareIndex: Int) {
-        if (board.squares[newSquareIndex].state == .unclaimed) {
-            board.squares[newSquareIndex].state = state.currentSquare
+        if (self.board.squares[newSquareIndex].state == .unclaimed) {
+            self.board.squares[newSquareIndex].state = state.currentSquare
         }
         updateState(newSquareIndex: newSquareIndex)
+
     }
     private func updateState(newSquareIndex: Int) {
 

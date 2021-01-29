@@ -9,7 +9,6 @@ import SwiftUI
 
 struct GridView: View {
     @EnvironmentObject var viewModel: BoardViewModel
-    
 
 
     var body: some View {
@@ -18,6 +17,7 @@ struct GridView: View {
                 GameSquareView(gameSquare: self.viewModel.board.squares[index].state, frameSize: getWidth())
                     .onTapGesture(perform: {
                         self.viewModel.claimTile(newSquareIndex: index)
+                        
                     })
             }
             

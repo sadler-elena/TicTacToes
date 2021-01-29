@@ -18,7 +18,7 @@ struct GameOverAlert: View {
                 Text(title)
                     .foregroundColor(.black)
                     .font(.largeTitle).bold()
-                GameSquareView(gameSquare: squareState, frameSize: 10)
+                GameSquareView(gameSquare: squareState, frameSize: 100)
                     .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             }
             RoundedButton(title: "Reset Game",
