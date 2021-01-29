@@ -4,12 +4,11 @@
 //
 //  Created by Elena Sadler on 1/20/21.
 //
-
 import SwiftUI
 
 struct ContentView: View {
 
-    let viewModel = BoardViewModel(board: GameBoard())
+    @EnvironmentObject var viewModel: BoardViewModel
     
     var gameResult: GameResult? {
         if case GameState.gameOver(let result) = viewModel.state {
